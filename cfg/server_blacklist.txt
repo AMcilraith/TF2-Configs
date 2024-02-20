@@ -1,0 +1,21 @@
+"serverblacklist"
+{
+	"server"
+	{
+		"name"		"tiny kitty's girl pound #4 - [nospread crits rtv good maps] 18+"
+		"date"		"1701407813"
+		"addr"		"74.91.115.12:27015"
+	}
+	"server"
+	{
+		"name"		"tiny kitty's girl pound #5 - [nospread crits rtv good maps] 18+"
+		"date"		"1701408422"
+		"addr"		"74.91.113.115:27015"
+	}
+	"server"
+	{
+		"name"		"Kogasatopia | New York City | Lolkek"
+		"date"		"1707266628"
+		"addr"		"74.91.116.171:27015"
+	}
+}
