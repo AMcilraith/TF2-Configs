@@ -211,9 +211,10 @@ Also, you will say "Dammit!" every time you use left mouse button.
 | Button(s) | Function | Extras |
 | --- | --- | --- |
 | Mouse 2 | Uber | Switches to medigun and ubers. Also writes it in team chat. |
-| Mouse 5 | Fake uber | You will say the Uber Ready voice command while you say that it's fake in your team chat. |
-| Shift + Mouse 5 | Mask uber | Press this when you are at 98/99% ubercharge to suppress the voice comm. |
-| Q| Radar | Hold this to see all your teammates. |
+| Mouse 5 | Mask uber | Press this when you are at 98/99% ubercharge to suppress the voice comm. |
+| Shift + Mouse 5 | Fake uber | You will say the Uber Ready voice command while you say that it's fake in your team chat. |
+| Q | Radar | Hold this to see all your teammates. |
+| F | Quickbow | Hold this to shoot an arrow, and then release it to return to medic primary. |
 
 #### Sniper:
 | Button(s) | Function | Extras |
@@ -221,7 +222,7 @@ Also, you will say "Dammit!" every time you use left mouse button.
 
 You will say "nice shot!" every time you attack.
 
-####Spy:
+#### Spy:
 
 | Button(s) | Function | Extras |
 | --- | --- | --- |
