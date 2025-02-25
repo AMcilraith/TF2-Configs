@@ -1,7 +1,0 @@
-"SpriteCard"
-{
-	"$basetexture" "sharp/splash1"
-	"$blendframes" 0
-	"$depthblend" 1
-	"$additive" 0
-}
