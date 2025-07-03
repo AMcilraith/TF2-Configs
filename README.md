@@ -40,7 +40,7 @@ Those maps are
 | Button(s) | Function | Extras |
 | --- | --- | --- |
 | W A S D | Regular movement | I have added a null-movement script. |
-| SPACE | Jumps + crouches | This button jumps and crouches at the same time. Still crouches when you hold the spacebar. |
+| SPACE | Jumps | |
 | CTRL | Crouches | |
 
 #### Mouse:
