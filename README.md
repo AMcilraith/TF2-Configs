@@ -1,4 +1,5 @@
 # Tvde1's TF2 Configs
+(Modified by addi-4th for personal use.)
 
 ## Introduction
 Hi!
