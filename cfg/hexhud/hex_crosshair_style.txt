@@ -1,1 +1,0 @@
-x { CustomCrosshair { labeltext * } CustomCrosshair_Shadow { labeltext * } } 
