@@ -1,0 +1,1 @@
+#base ../../custom/hexhud/resource/ui/customizations/colors/crosshair_flash/crosshair_flash_salmon.res 
