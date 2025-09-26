@@ -1,5 +1,5 @@
-# Tvde1's TF2 Configs
-(Modified by addi-4th for personal use.)
+# addi.bot's TF2 Configs
+(Modified from Tvde1's configs for personal use.)
 
 ## Introduction
 Hi!
