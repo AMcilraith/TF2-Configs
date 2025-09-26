@@ -90,7 +90,7 @@ The medic configuration includes several specialized scripts:
 
 #### Vaccinator Automation (`medicvacc.cfg`)
 - **1, 2, 3 Keys**: Quick resistance switching (Bullet/Explosive/Fire)
-- **Backspace**: Reset vaccinator state on death
+- **Backspace**: Reset vaccinator/medigun state on death
 - **Automatic Cycling**: Prevents resistance mode confusion
 
 #### Medic Core Binds (`medic.cfg`)
