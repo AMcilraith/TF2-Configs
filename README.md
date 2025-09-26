@@ -1,259 +1,310 @@
-# addi.bot's TF2 Configs
-(Modified from Tvde1's configs for personal use.)
+# addi.bot's Team Fortress 2 Configuration Pack
+Advanced TF2 configuration scripts with class-specific optimizations, performance settings, and enhanced gameplay features.
+Heavily modified from Tvde1's configs for personal use.
 
-## Introduction
-Hi!
-These are my TF2 configs for all classes.
-I'll try to comment on what every line does, if there are any questions, just ask.
-Feel free to edit the configs to your own liking!
+## Table of Contents
+- [Features Overview](#features-overview)
+- [Installation](#installation)
+- [Core Features](#core-features)
+- [Graphics Configurations](#graphics-configurations)
+- [Class-Specific Scripts](#class-specific-scripts)
+- [Entertainment Features](#entertainment-features)
+- [Keybind Reference](#keybind-reference)
+- [Console Commands](#console-commands)
 
-## General information on scripting
-From the Official Team Fortress Wiki https://wiki.teamfortress.com/wiki/Scripting
-> Scripting is the use of configuration files (.cfg) to create new keybinds and aliases automating complex behaviors and console command sequences. Unlike hacking, scripting is built into Team Fortress 2 and is not banned by VAC (Valve Anti-Cheat). Uses of scripting vary from simply binding a key to a command to self-referential loops and nested aliases that redefine one another. Any functionality that can be created with scripting can also be accomplished without it, but scripting allows these functionalities to be used in the heat of battle.
+## Features Overview
 
-## List of default keys
-This is a list of default keys for the PC version of Team Fortress 2.
-https://wiki.teamfortress.com/wiki/List_of_default_keys
+### Core Systems
+- **Null Movement Scripting** - Eliminates conflicting directional inputs
+- **Crouch-Jump Automation** - Rocket jumping and advanced movement
+- **Voice Command System** - Context-sensitive communication
+- **Graphics Presets** - Performance-optimized visual settings
+- **Class-Specific Binds** - Specialized controls for each class
+
+### Advanced Features  
+- **Medic Vaccinator Script** - Automated resistance cycling
+- **Quick Communication** - Numpad-based team callouts
+- **Entertainment Scripts** - Jokes, insults, and fun commands
+- **Custom Crosshair Settings** - Optimized visibility
+- **Network Optimization** - Competitive-grade connection settings
 
 ## Installation
-You can download this GitHub repository as a .zip and extract all the files into
-- Windows: C:\Program Files (x86)\Steam\SteamApps\common\Team Fortress 2\tf\cfg\
-- OSX: Volume/Users/~username/Library/Application Support/Steam/SteamApps/common/team fortress 2/tf/cfg/
-- Linux: ~/.local/share/Steam/steamapps/common/Team\ Fortress\ 2/tf/custom/
 
-You can delete README.md though as it serves no function in game.  
-Also make sure you have no scripts in `\Team Fortress 2\tf\cfg` that have the same name as these.
-You should update it regularly, and scan through the README.md to see if I have added something.
+### Automatic Installation
+1. Download this repository as a `.zip` file
+2. Extract all `.cfg` files to your TF2 config directory:
+   - **Windows**: `C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2\tf\cfg\`
+   - **macOS**: `~/Library/Application Support/Steam/steamapps/common/team fortress 2/tf/cfg/`
+   - **Linux**: `~/.local/share/Steam/steamapps/common/Team\ Fortress\ 2/tf/cfg/`
+These are the typical install directories. If you've installed TF2 somewhere else, use that location and extract all `.cfg` files to the `/tf/cfg` directory in your install folder.
 
-## Maps
-As you can see, I have a few aliasses that start up maps. You can only use them if you've downloaded the maps. It is optional, you don't have to download them.
-Those maps are
-- tr_walkway_rc2
-- tr_aim
-- tr_aim_practice
+3. The `autoexec.cfg` will automatically load core configurations on game start
 
-## Keybinds
+### Important Notes
+- Remove or backup any existing configs with the same filenames
+- Delete `README.md` from your cfg folder (not needed in-game)
+- Check for updates regularly for new features and fixes
 
-### All classes: (Some classes may overwrite these)
+## Core Features
 
-#### High frequency buttons:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| W A S D | Regular movement | I have added a null-movement script. |
-| SPACE | Jumps | |
-| CTRL | Crouches | |
+### Movement System
+- **Null Movement**: Prevents movement key conflicts (W+S, A+D cancellation)
+- **Crouch-Jump Binding**: Automatic crouch-jumping for rocket jumps
+- **Shift Modifier**: Context-sensitive key behaviors when shift is held
 
-#### Mouse:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| Mouse 1 | Attacks | Just the same as default |
-| Mouse 2 | Uses attack 2 | E.g. equipping an invisi-watch, or zooming in as sniper. |
-| Mousewheel Up | Primary weapon | Equips the primary weapon. **NOTE: Some classes overwrite this.**|
-| Mousewheel Down | Secondary weapon | Equips the secondary weapon. **NOTE: Some classes overwrite this.**|
-| Mousewheel Click (Mouse 3) | Melee | Equips the melee weapon and keeps swinging it until you let go if it. It will still be equipped. **NOTE: Some classes overwrite this.**|
-| Mouse 4 | Voice Chat | Hold this to use the voice chat. |
+### Voice Communication
+- **Quick Commands**: Streamlined voice menu access
+- **Team Callouts**: Numpad-based enemy spotting system  
+- **Class Communication**: Role-specific voice lines
 
-#### Special Keys:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| E | Call for medic | I shouldn't have to explain this. |
-| ALT | Call for spy | Just calls out that there is a spy. |
-| F | Inspect | Inspects the player aimed at, or shows an animation of your current reskin weapon. |
-| R | Reload and disguise team | Use this to manually reload, or change the disguise team as a spy. |
-| SHIFT | Used for class-switching and voice commands | If you hold shift, you can use voice commands and class switching. Some classes will add extra usages to this button. |
+### Performance Optimization
+- **Network Settings**: Optimized rates for competitive play (66 tick)
+- **Auto-reload**: Enabled for all weapons
+- **Crosshair Config**: Customizable crosshair settings
+- **HUD Optimization**: Enhanced medic caller and target markers
 
-###### Shift usage:  
-When shift is held down, these buttons will serve diffrent purposes than if shift hadn't been held down. When shift is released, all buttons will be bound to the previous binds again.  
-Also, some classes will make use of shift. It'll switch what a button does.
+## Graphics Configurations
 
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| E | Yes! Voice | Says "Yes!" with a voice command. |
-| R | No! Voice | Says "No!" with a voice command. |
-| F | Thanks! Voice | Says "Thanks!" with a voice command. |
-| G | Nice shot! Voice | You have to be nice somethimes. |
-| Q | Battlecry voice | Look at enemies with your melee equipped to say something witty. |
-| C | Noob talk | This will say a noob line (from chat.cfg). |
-| 1 to 9 | Class switching | Press 1 - 9 to swich to the desired class. I advise you to use this and not the regular class swiching. |
+### Available Presets
+| Config File | Purpose | Performance | Visual Quality |
+|------------|---------|-------------|----------------|
+| `comp_graphics.cfg` | Competitive | Maximum FPS | Minimal |
+| `maxfps.cfg` | Performance | Highest FPS | Lowest |
+| `normalfps.cfg` | Balanced | Good FPS | Moderate |
 
-#### Low frequency buttons:
-Most of these stayed the same.
+### Graphics Features
+- **Competitive Config**: Disables sprays, minimal shadows, optimized for FPS
+- **Network Optimization**: `cl_cmdrate 66`, `cl_updaterate 66`, `rate 60000`
+- **Shadow Settings**: Configurable shadow quality and rendering
+- **Spray Control**: Option to disable/limit spray decals
 
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| L | Dropitem | Drops the intel/other stuff when carrying it. |
-| M | Open loadout | Goes directly to the loadout of the class you're in. |
-| N | Open backpack | Opens your backpack. |
-| X | Voice menu 1 | Opens voice menu 1. |
-| C | Voice menu 2 | Opens voice menu 2. |
-| V | Voice menu 3 | Opens voice menu 3. |
-| Z | Spray | Spray your spray. |
-| T | Open chat | Opens server chat. |
-| Y | Team chat | Opens chat for your team to see only. |
-| K | Die | You kill yourself. |
-| G | Taunt | Uses your taunt menu. Press twice to use the item taunt. (Or once if you have no other taunts equipped.) |
-| , | Change class | Changes classes. But I advise you to use the SHIFT + 1-9 to change classes. |
-| . | Change team | Change teams. |
-| J | Accept connect | Press this to accept if you have been asked to join a server (by a server). |
-| H | Use | Use the item in your action slot. |
-| U | Tauntkill | Press this to use your classes tauntkill weapon and taunt. |
-| TAB | Show scoreboard | You should know that screen by now. |
-| ESCAPE | Cancel | Regular escape function. |
-| PGDN | First/Third person toggle | Toggles the first person world model and taunt. Just for fun. |
-| \` | Developer console | You should be familiar with this, if you're on this page. |
-| \ | Voice chat | Use your mic. |
-| - | Decline notification | |
-| = | Accept notification | |
-| F1 | Vote option 1 | Usually vote yes in the tf2 voting system (kick, or next map) |
-| F2 | Vote option 2 | Usually no ^ |
-| F3 | Demo start | Start recording a demo. |
-| Shift + F3 | Demo stop | Stop recording a demo. |
-| F4 | Toggle ready | Use this to toggle your ready state in MvM and other gamemodes. |
-| F5 | Screenshot | |
-| F6 | Save replay | |
-| F7 | Fill in an abuse report | Use it when you spot a cheater. It is pretty self explanatory. |
-| F8 | Bug-fix button | If it's buggy, or something disappeared. Note: this will most likely freese your game for more than 10 seconds. Could disconnect you from game. |
-| F9-F12 | Choose between presets. | Also use to quick respawn. |
-| ' | Demo bookmark | If you are recording a demo and want a bookmark, use this to bookmark. |
+### Console Commands for Graphics
+- `comp_g` - Switch to competitive graphics
+- `good_g` - Switch to good quality graphics  
+- `ultra_g` - Switch to ultra graphics (high-end PCs only)
 
-Note: The demos will be stored in `tf\demo_[class]`. The [class] is the class thet you're playing. Also, if you make a bookmark, it'll say `Bookmark: [Class]`.
+## Class-Specific Scripts
 
-#### Numpad voice commands:
-Press these key on your numpad to send insults/taunts in chat. It'll automatically rebind them to a diffrent one.  
-First, select a catagory. `0`, `.` or `ENTER`. And then use the 1-9 buttons.
+### Medic Advanced Features
+The medic configuration includes several specialized scripts:
 
-##### Selection
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| 1-9 | Classes | Use these for selecting the class. |
-| 0 (INS) | Enemies down | Push this to use the 'enemy down' commands. It will write "Enemy ... down" in team chat. |
-| . (DEL) | Enemy spy | Push this to enable the spy commands. It will write "Enemy spy disguised as ..." in team chat. |
-| ENTER | Other | Push this for other commands. They are listed below. |
+#### Vaccinator Automation (`medicvacc.cfg`)
+- **1, 2, 3 Keys**: Quick resistance switching (Bullet/Explosive/Fire)
+- **Backspace**: Reset vaccinator state on death
+- **Automatic Cycling**: Prevents resistance mode confusion
 
-So after 0 (INS) and . (DEL), press 1-9 for the class.
+#### Medic Core Binds (`medic.cfg`)
+- **Mouse5**: Uber charge masking (hides "MEDIC!" at 98-99%)
+- **Mouse2**: Pop uber with team notification
+- **F Key**: Quick crossbow shot (hold to fire, release to switch back)
+- **Q Key**: Radar mode (shows all teammates through walls)
+- **Shift Modifier**: Changes mouse5 to fake uber, F to voice thanks
 
-##### Other
-These take place when the KP enter has been activated.
+### Engineer Building Scripts
+- **Q**: Fast-build sentry (destroys old sentry)
+- **Mouse5**: Building mode (1-4 keys become build menu)
+  - 1: Build Sentry
+  - 2: Build Dispenser  
+  - 3: Build Teleporter Entrance
+  - 4: Build Teleporter Exit
 
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| 1 | Sentry down | Lets your team know that a sentry is down. |
-| 2 | Teleporters down | Lets your team know that one or more teleporters are down. |
-| 3 | Everything down | Lets your team know the whole nest is down. |
-| 4 | Uber pop | Select the class they popped on. |
-| 5 | Kritz pop | Select the class they popped on. |
-| 6 | Quick fix pop | Select the class they popped on. |
-| 7 | Push | Let's all push (go in). |
-| 8 | Fall back | We need to fall back. |
+### Heavy Sandvich Management
+- **Mouse5**: Throw sandvich to ground/teammate
+- **Shift+Mouse5**: Eat sandvich for health
+- **Q**: "Pootispow" voice line
+- **P**: Pootis spam (use in spawn only)
 
-When you press 4 or 5 to show an uber pop, press 1-9 to show the class they've popped on.
+### Spy Advanced Features
+- **Mouse5**: Automatic sapper (hold to sap, release for knife)
+- **Shift+Mouse5**: Last disguise/weapon cycling
+- **Q**: Zoom script (toggle low FOV for precision)
+- **Mousewheel Up**: Primary weapon with viewmodel off
+- **Mouse3**: Disguise menu (R to swap teams)
 
-##### Insulting/Joking
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| / | LMAOBOX Spam | Push these for a LMAOBOX spam line. (You won't get vac'ed!) |
-| * | Insults | Push these when someone is mad. These are whole centances. |
-| - | Jokes | These are just nice TF2 related jokes. |
+### Scout Utilities
+- **Mouse4**: Sandman ball launcher
+- **Q**: "Need dispenser here!" callout
 
-Examples:  
-If I'd press `KP 0` (Enemy down commands) and then `KP 4` (demoman), in the team chat "Enemy demoman down!" will appear.  
-And if I'd press `KP .` (spy commands) and then `KP 8` (sniper), then it will write "Enemy spy disguised as sniper!" in team chat.  
-Or if I'd press `KP ENTER` (other commands) and then `KP 5` and then `KP_4`, it will write "They have popped kritz on the Demoman." in team chat.
+### Pyro Airblast System
+- **Mouse2**: Auto-switch to flamethrower + airblast
+- **Shift+Mouse2**: Airblast then switch to flare gun
+- **Mouse5**: Toggle flamethrower viewmodel on/off
 
+## Entertainment Features
 
-### Class specific:
+### Insult System (`insults.cfg`)
+- **Keypad \***: Cycles through 10 creative insults
+- **Keypad -**: Cycles through 16 TF2-themed jokes
+- **Automatic Cycling**: Each use switches to next line
 
-#### Scout:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| Mouse 4 | Sandman | Hold it to launch a sandman ball. Let it go to return to last selected weapon. |
-| Q | Dispenser here! | Press this to use the "Need a dispenser here!" voice command. |
+### Sample Content
+**Insults**: "With aim like that, I pity whoever has to clean the floor around your toilet"
+**Jokes**: "Why didn't the spy cross the road? Because he never really was on your side"
 
-#### Soldier:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
+### Communication Shortcuts
+- **KP_MULTIPLY**: Random insults for trash talk
+- **KP_MINUS**: TF2 jokes for light-hearted moments
+- **Automatic Rebinding**: Prevents spam, cycles content
 
-#### Pyro:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| Mouse 2 | Airblast | It'll switch to your flamethrower and airblast. |
-| SHIFT + Mouse 2 | Flare airblast | Swaps to the flare gun after you ariblast. |
-| Mouse 5 | Viewmodel off | Click this to turn the flamethrower viewmodel (and flames) on/off. | 
+## Keybind Reference
 
-#### Demoman:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
+### Core Movement & Combat
+| Key | Function | Details |
+|-----|----------|---------|
+| **W/A/S/D** | Movement | Null-movement scripting prevents conflicts |
+| **Space** | Crouch-Jump | Auto crouch-jump for rocket jumping |
+| **Ctrl** | Crouch | Manual crouch control |
+| **Shift** | Modifier Key | Changes behavior of other keys when held |
 
-#### Heavy:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| Mouse 5 | Throw sandvich | Hold it to throw the sandvich (on the ground or to a player) and let go if it's thrown. |
-| Shift + Mouse 5 | Eat sandvich | Hold to eat sandvich. You can let go if you're eating. |
-| Q | Pootispow | Press it. It will pootispow. |
-| P | Pootis Spam | Spam it while **in spawn** to keep saying pootis. |
+### Mouse Controls
+| Button | Function | Details |
+|--------|----------|---------|
+| **Mouse1** | Attack | Primary fire + spectator navigation |
+| **Mouse2** | Alt Attack | Secondary fire + spectator controls |
+| **Mouse3** | Melee | Hold for continuous melee attacks |
+| **Mouse4** | *Unbound* | Available for class-specific features |
+| **Mouse5** | *Class-Specific* | Varies by class (see class sections) |
+| **Wheel Up** | Primary Weapon | Quick weapon switching |
+| **Wheel Down** | Secondary Weapon | Quick weapon switching |
 
-#### Engineer:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| Q | Fastbuild Sentry | Quickly builds a sentry. This will destroy you old sentry. **Bug: It may fire your gun once accidentally. Switch to your melee first if you don't want to lose revenge crits.** |
-| MOUSE 5 | Build things | Push this to use 1-4 to build equipment. |
+### Communication System
+| Key | Function | Shift+Key Function |
+|-----|----------|-------------------|
+| **E** | Call Medic | "Yes!" voice command |
+| **R** | Reload/Disguise | "No!" voice command |
+| **F** | Inspect | "Thanks!" voice command |
+| **G** | Taunt | "Nice shot!" voice command |
+| **Q** | *Class-Specific* | Battlecry voice command |
+| **C** | Voice Menu 2 | Trash talk cycling |
 
-When you push mouse 4, the 1, 2, 3 and 4 keys will change into the building menu:
-* 1 is for building a sentry.
-* 2 is for building a dispenser.
-* 3 is for building a teleporter entrance.
-* 4 is for building a teleporter exit.  
+### Class Switching (Hold Shift + Number)
+| Key | Class | Key | Class |
+|-----|-------|-----|-------|
+| **1** | Scout | **6** | Engineer |
+| **2** | Soldier | **7** | Medic |
+| **3** | Pyro | **8** | Sniper |
+| **4** | Demoman | **9** | Spy |
+| **5** | Heavy |  |  |
 
-When you have used a key. It will go back to being the default binds (1 for slot1 etc).
+### Utility Keys
+| Key | Function | Details |
+|-----|----------|---------|
+| **T** | Chat | All chat |
+| **Y** | Team Chat | Team only |
+| **L** | Drop Item | Intel/payload cart |
+| **M** | Loadout | Direct to class loadout |
+| **N** | Backpack | Open backpack |
+| **TAB** | Scoreboard | Match statistics |
+| **K** | Suicide | Kill command |
+| **H** | Action Slot | Use equipped action item |
 
-Also, you will say "Dammit!" every time you use left mouse button.
+### Advanced Functions
+| Key | Function | Details |
+|-----|----------|---------|
+| **U** | Tauntkill | Auto-equip tauntkill weapon + taunt |
+| **PGDN** | First/Third Person | Toggle world model view |
+| **F3** | Demo Record | Start demo recording |
+| **Shift+F3** | Demo Stop | Stop demo recording |
+| **F8** | Bug Fix | Emergency reset (may cause lag) |
 
-#### Medic:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| Mouse 2 | Uber | Switches to medigun and ubers. Also writes it in team chat. |
-| Mouse 5 | Mask uber | Press this when you are at 98/99% ubercharge to suppress the voice comm. |
-| Shift + Mouse 5 | Fake uber | You will say the Uber Ready voice command while you say that it's fake in your team chat. |
-| Q | Radar | Hold this to see all your teammates. |
-| F | Quickbow | Hold this to shoot an arrow, and then release it to return to medic primary. |
+### Numpad Communication System
+Advanced team communication using numpad keys with automatic cycling.
 
-#### Sniper:
-| Button(s) | Function | Extras |
-| --- | --- | --- |
+#### Communication Categories
+| Key | Category | Usage |
+|-----|----------|-------|
+| **KP_0** | Enemy Down | Report eliminated enemies |
+| **KP_DOT** | Spy Callouts | Report enemy spy disguises |  
+| **KP_ENTER** | Tactical Commands | Strategic team communications |
 
-You will say "nice shot!" every time you attack.
+#### Enemy Down Reports (After KP_0)
+Press KP_0, then class number (1-9) to report: "Enemy [class] down!"
 
-#### Spy:
+#### Spy Disguise Reports (After KP_DOT)  
+Press KP_DOT, then class number (1-9) to report: "Enemy spy disguised as [class]!"
 
-| Button(s) | Function | Extras |
-| --- | --- | --- |
-| Mouse 1 | Attack | |
-| Mouse 2 | Secondary attack. | Uses invisi watch or dead ringer. It will turn on the viewmodel if you have equpped the revolver. It will also turn the viewmodel off again after undeploying it if you still have the revolver equipped. |
-| Mousewheel up | Equip primary | Equips primary weapon and removes viewmodel. Using any other weapon will show the viewmodel again. |
-| Mouswheel down | Equip knife | |
-| Mouse 3 | Use the disguise menu. | Use 'R' to swap between teams. |
-| Mouse 5 | Sap-o-matic | Hold this to bring out your sapper and start sapping. Let go of it to return to your knife. |
-| Shift + Mouse 5 | Lastdisguise | Use this to disguise again, or change the weapon your disguise is holding. |
-| Q | Zoom script | You will zoom in (low FOV). Press it again to zoom out. |
+#### Tactical Commands (After KP_ENTER)
+| Key | Command | Effect |
+|-----|---------|--------|
+| **1** | Sentry Down | "Sentry gun down!" |
+| **2** | Teleporter Down | "Teleporter down!" |
+| **3** | Everything Down | "Everything down!" |
+| **4** | Uber Pop | "They popped uber on [class]!" |
+| **5** | Kritz Pop | "They popped kritz on [class]!" |
+| **6** | Quick-Fix Pop | "They popped quick-fix on [class]!" |
+| **7** | Push Command | "Let's push!" |
+| **8** | Fall Back | "Fall back!" |
 
-Note: If the viewmodels are not being hidden, look at spy.cfg. I have explained there what lines to comment and uncomment (with //).
+*For uber callouts (4-6): Press the command key, then class number (1-9)*
 
-## Console Commands:
-| Command | Meaning |
-| --- | --- |
-| `walkway` | Loads the tr_walkway map and executes some commands to make it work. |
-| `aim` | Same as above, but then with the map tr_aim. |
-| `aim_training` | Same as above, but then with the map tr_aim_training. |
-| `comp_g` | Switches to my comp graphics config. |
-| `good_g` | Uses my good graphics config. Usually for playing pubs. This is the default one. |
-| `ultra_g` | Swtiches to the ultra graphics. Not advised unless you have a good pc. |
+## Console Commands
 
-Changing graphics, can (and will) freze your game. But only when changing to `good` or `ultra`.
+### Graphics Switching
+| Command | Effect | Performance Impact |
+|---------|--------|-------------------|
+| `comp_g` | Competitive graphics | Maximum FPS |
+| `good_g` | Balanced graphics | Moderate FPS |
+| `ultra_g` | High quality graphics | High-end PCs only |
 
-## Final words.
-Feel free to edit this to your own liking. But please refer to me (and this page) if you will upload this code somewhere.
-Message me if you encounter any bugs, I'd be glad to help and fix it. You can also message me if you know any improvements.  
-Also, check out [my youtube channel](https://www.youtube.com/user/1tvde1) for some cool TF2 videos! (Mostly spy frags and fun related.)
+### Training Maps
+| Command | Map | Purpose |
+|---------|-----|---------|
+| `walkway` | tr_walkway_rc2 | Movement practice |
+| `aim` | tr_aim | Aim training |
+| `aim_training` | tr_aim_practice | Advanced aim practice |
 
-#### P.S.
-You can bind a lenny face to KP_PLUS (the plus on the numpad). It won't unbind it.
+*Note: Training maps must be downloaded separately*
+
+### Configuration Management
+| Command | Effect |
+|---------|--------|
+| `exec allclasses` | Reload core bindings |
+| `exec [class]` | Load class-specific config |
+| `exec medicvacc` | Load Vaccinator script |
+
+## Technical Details
+
+### Network Optimization
+- **Tick Rate**: 66 Hz for competitive servers
+- **Interpolation**: `cl_interp 0` for minimal lag
+- **Update Rate**: `cl_updaterate 66` for smooth gameplay
+- **Cmd Rate**: `cl_cmdrate 66` for responsive input
+
+### Performance Features
+- **Auto-reload**: Enabled for all weapons
+- **Medic Autocalling**: Set to 75% health threshold  
+- **Crosshair Scaling**: Optimized visibility settings
+- **HUD Enhancements**: Medic target markers enabled
+
+### File Structure
+```
+cfg/
+├── autoexec.cfg          # Main startup file
+├── allclasses.cfg        # Core bindings and movement
+├── binds.cfg             # Key assignments
+├── chat.cfg              # Voice commands and communication
+├── [class].cfg           # Individual class configs
+├── comp_graphics.cfg     # Performance graphics
+├── insults.cfg           # Entertainment scripts
+└── medicvacc.cfg         # Vaccinator automation
+```
+
+## 🔧 Troubleshooting
+
+### Common Issues
+- **Graphics lag after switching**: Normal behavior, game may freeze briefly
+- **Vaccinator script not working**: Press Backspace to reset on death
+- **Demo recording issues**: Ensure tf/demos folder exists
+- **Class switching problems**: Use Shift+Number method instead of comma key
+
+### Reset Commands
+- **Backspace**: Reset Vaccinator state
+- **F8**: Emergency bug fix (may cause temporary lag)
+- **exec allclasses**: Reload core configurations
+
+---
+
+## 📝 Credits & Support
+Originally based on community TF2 configs, extensively modified for enhanced gameplay.
+
+**Note**: All scripting features are VAC-safe and built into Team Fortress 2's official console system.
