@@ -1,1 +1,0 @@
-#base ../../custom/hexhud/resource/ui/customizations/colors/crosshair/crosshair_white.res 

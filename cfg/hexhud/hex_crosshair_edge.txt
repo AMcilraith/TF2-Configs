@@ -1,1 +1,0 @@
-#base ../../custom/hexhud/resource/ui/customizations/crosshairs/crosshair_outline.res 
