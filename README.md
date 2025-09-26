@@ -1,5 +1,6 @@
 # addi.bot's Team Fortress 2 Configuration Pack
 Advanced TF2 configuration scripts with class-specific optimizations, performance settings, and enhanced gameplay features.
+
 Heavily modified from Tvde1's configs for personal use.
 
 ## Table of Contents
