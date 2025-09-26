@@ -1,5 +1,6 @@
 # addi.bot's Team Fortress 2 Configuration Pack
 Advanced TF2 configuration scripts with class-specific optimizations, performance settings, and enhanced gameplay features.
+
 Heavily modified from Tvde1's configs for personal use.
 
 ## Table of Contents
@@ -90,7 +91,7 @@ The medic configuration includes several specialized scripts:
 
 #### Vaccinator Automation (`medicvacc.cfg`)
 - **1, 2, 3 Keys**: Quick resistance switching (Bullet/Explosive/Fire)
-- **Backspace**: Reset vaccinator state on death
+- **Backspace**: Reset vaccinator/medigun state on death
 - **Automatic Cycling**: Prevents resistance mode confusion
 
 #### Medic Core Binds (`medic.cfg`)
