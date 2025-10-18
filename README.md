@@ -19,7 +19,7 @@ Heavily modified from Tvde1's configs for personal use.
 - **Null Movement Scripting** - Eliminates conflicting directional inputs
 - **Crouch-Jump Automation** - Rocket jumping and advanced movement
 - **Voice Command System** - Context-sensitive communication
-- **Graphics Presets** - Performance-optimized visual settings
+- **Graphics Presets** - Performance-optimized visual settings (Comanglia-based)
 - **Class-Specific Binds** - Specialized controls for each class
 
 ### Advanced Features  
@@ -27,7 +27,8 @@ Heavily modified from Tvde1's configs for personal use.
 - **Quick Communication** - Numpad-based team callouts
 - **Entertainment Scripts** - Jokes, insults, and fun commands
 - **Custom Crosshair Settings** - Optimized visibility
-- **Network Optimization** - Competitive-grade connection settings
+- **Modular Network System** - Multiple connection profiles with quick switching
+
 
 ## Installation
 
@@ -43,7 +44,7 @@ These are the typical install directories. If you've installed TF2 somewhere els
 
 ### Important Notes
 - Remove or backup any existing configs with the same filenames
-- Delete `README.md` from your cfg folder (not needed in-game)
+- **Keep folder structure intact** - The modular network and graphics configs require their subfolders
 - Check for updates regularly for new features and fixes
 
 ## Core Features
@@ -66,23 +67,33 @@ These are the typical install directories. If you've installed TF2 somewhere els
 
 ## Graphics Configurations
 
+The graphics system uses modular presets based on Comanglia's FPS configs, optimized for different use cases.
+
 ### Available Presets
-| Config File | Purpose | Performance | Visual Quality |
-|------------|---------|-------------|----------------|
-| `comp_graphics.cfg` | Competitive | Maximum FPS | Minimal |
-| `maxfps.cfg` | Performance | Highest FPS | Lowest |
-| `normalfps.cfg` | Balanced | Good FPS | Moderate |
+| Config File | DX Level | Purpose | Performance | Shadows | Best For |
+|------------|----------|---------|-------------|---------|----------|
+| `graphics_ultra.cfg` | 98 | Cinema/Recording | Very demanding | High quality | Video making, screenshots |
+| `graphics_comp.cfg` | 81+ | Competitive | Optimized FPS | Enabled | Competitive play |
+| `graphics_normal.cfg` | 81 | Balanced | Good FPS | Enabled | Casual play, average systems |
+| `graphics_laptop.cfg` | 81 | Low-end | High FPS | Disabled | Laptops, low-end PCs |
+| `graphics_maxfps.cfg` | 81 | Ultra-low | Maximum FPS | Disabled | Extremely low-end systems |
 
 ### Graphics Features
-- **Competitive Config**: Disables sprays, minimal shadows, optimized for FPS
-- **Network Optimization**: `cl_cmdrate 66`, `cl_updaterate 66`, `rate 60000`
-- **Shadow Settings**: Configurable shadow quality and rendering
-- **Spray Control**: Option to disable/limit spray decals
+- **Modular Presets**: Based on Comanglia's FPS configs
+- **Console Switching**: Change graphics on-the-fly with aliases
+- **Competitive Config**: Shadows enabled for competitive advantage, ragdolls/gibs disabled
+- **Ultra Config**: 8x MSAA, 4096 decals, HDR Level 2, 16x anisotropic filtering
+- **Shadow Settings**: Configurable shadow quality and rendering per preset
+- **Spray Control**: Option to disable/limit spray decals per preset
 
 ### Console Commands for Graphics
-- `comp_g` - Switch to competitive graphics
-- `good_g` - Switch to good quality graphics  
-- `ultra_g` - Switch to ultra graphics (high-end PCs only)
+- `ultra_g` - Switch to ultra/cinema graphics (high-end PCs only)
+- `comp_g` - Switch to competitive graphics (optimized FPS + shadows)
+- `normal_g` - Switch to balanced graphics
+- `laptop_g` - Switch to laptop/low-end mode
+- `maxs_g` - Switch to maximum FPS mode (ultra-low)
+
+**Note:** Graphics configs are located in `graphics/` folder and automatically executed by `graphics.cfg`
 
 ## Class-Specific Scripts
 
@@ -256,20 +267,59 @@ Press KP_DOT, then class number (1-9) to report: "Enemy spy disguised as [class]
 
 *Note: Training maps must be downloaded separately*
 
+### Network Configuration
+| Command | Effect |
+|---------|--------|
+| `net_comp` | Competitive mode (66 Hz + harsh interp) |
+| `net_safe` | Safe mode (66 Hz + soft interp) - default |
+| `net_wifi` | Low bandwidth mode (40 Hz + soft interp) |
+| `net_lan` | LAN mode (66 Hz + aggressive interp) |
+| `net_toggle` | Toggle between 40 and 66 Hz |
+| `net_check` | Display current network settings |
+| `net_reset` | Reset to default network config |
+
 ### Configuration Management
 | Command | Effect |
 |---------|--------|
 | `exec allclasses` | Reload core bindings |
 | `exec [class]` | Load class-specific config |
 | `exec medicvacc` | Load Vaccinator script |
+| `exec quickprecache` | Reload autoexec without restarting game |
 
 ## Technical Details
 
 ### Network Optimization
-- **Tick Rate**: 66 Hz for competitive servers
-- **Interpolation**: `cl_interp 0` for minimal lag
-- **Update Rate**: `cl_updaterate 66` for smooth gameplay
-- **Cmd Rate**: `cl_cmdrate 66` for responsive input
+
+The network configuration system is **modularized** into separate files for better organization:
+- **`network.cfg`** - Base settings and file loader
+- **`network_66.cfg`** - 66 Hz profiles (good connection)
+- **`network_40.cfg`** - 40 Hz profiles (bad connection)
+- **`network_combos.cfg`** - Pre-configured combo aliases
+- **`network_util.cfg`** - Utility commands
+
+**Base Settings:**
+- **Rate**: 786432 (maximum)
+- **Default**: 66 Hz updaterate/cmdrate
+- **Interpolation**: 0.033 (balanced)
+- **Packet Compression**: Enabled
+- **Lag Compensation**: Enabled
+
+**Network Profiles:**
+- `net_66` / `net_40` - Base 66 Hz / 40 Hz profiles
+- `net_66_harsh` / `net_66_normal` / `net_66_soft` - Different interp levels for 66 Hz
+- `net_40_harsh` / `net_40_normal` / `net_40_soft` - Different interp levels for 40 Hz
+
+**Quick Combos:**
+- `net_comp` - Competitive: 66 Hz + harsh interp
+- `net_safe` - Safe: 66 Hz + soft interp (default)
+- `net_wifi` - Low bandwidth: 40 Hz + soft interp
+- `net_lan` - LAN: 66 Hz + aggressive interp
+- `net_bad_mode` - Bad connection: 40 Hz + normal interp
+
+**Utilities:**
+- `net_toggle` - Toggle between 40 and 66 Hz
+- `net_check` - Print current network values
+- `net_reset` - Restore defaults
 
 ### Performance Features
 - **Auto-reload**: Enabled for all weapons
@@ -280,32 +330,119 @@ Press KP_DOT, then class number (1-9) to report: "Enemy spy disguised as [class]
 ### File Structure
 ```
 cfg/
-├── autoexec.cfg          # Main startup file
-├── allclasses.cfg        # Core bindings and movement
-├── binds.cfg             # Key assignments
-├── chat.cfg              # Voice commands and communication
-├── [class].cfg           # Individual class configs
-├── comp_graphics.cfg     # Performance graphics
-├── insults.cfg           # Entertainment scripts
-└── medicvacc.cfg         # Vaccinator automation
+├── chat/               # Chat & Communication
+│   ├── chat_insults.cfg   # Insults and jokes for keypad
+│   ├── chat_menu.cfg      # Competitive chat binds
+│   └── chat_trash.cfg     # Funny "noob questions" trashtalk
+│
+├── graphics/           # Graphics Presets
+│   ├── graphics.cfg        # Graphics loader (executes presets)
+│   ├── graphics_ultra.cfg  # Ultra/Cinema quality (recording)
+│   ├── graphics_comp.cfg   # Competitive settings
+│   ├── graphics_normal.cfg # Balanced performance
+│   ├── graphics_laptop.cfg # Laptop/low-end systems
+│   └── graphics_maxfps.cfg # Maximum FPS (ultra-low)
+│
+├── network/            # Network Configuration
+│   ├── network.cfg             # Main network loader & base settings
+│   ├── network_66.cfg          # 66 Hz (good connection) profiles
+│   ├── network_40.cfg          # 40 Hz (bad connection) profiles
+│   ├── network_combos.cfg      # Quick combo aliases
+│   └── network_util.cfg        # Utility commands (toggle, check, reset)
+│
+├── utility/            # Utility Scripts & Core
+│   ├── medic/              # Medic-specific utilities
+│   │   ├── medicgun.cfg        # Medigun switcher & uber scripts
+│   │   └── medicvacc.cfg       # Vaccinator resistance switcher
+│   ├── allclasses.cfg      # Core settings for all classes
+│   ├── binds.cfg           # Global keybindings
+│   ├── regen.cfg           # Portable regen for rocket jumping
+│   └── resetall.cfg        # Reset all settings to default
+│
+├── Class Configs (Main Directory)
+│   ├── scout.cfg           # Scout-specific binds & scripts
+│   ├── soldier.cfg         # Soldier market gardener & rocket jump
+│   ├── pyro.cfg            # Pyro airblast & viewmodel toggle
+│   ├── demoman.cfg         # Demoman viewmodel toggle
+│   ├── heavyweapons.cfg    # Heavy sandvich & pootis scripts
+│   ├── engineer.cfg        # Engineer building scripts
+│   ├── medic.cfg           # Medic configuration
+│   ├── sniper.cfg          # Sniper crosshair scripts
+│   └── spy.cfg             # Spy cloak & disguise scripts
+│
+├── autoexec.cfg        # Auto-executed on game startup
+└── quickprecache.cfg   # Quick reload autoexec
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
-- **Graphics lag after switching**: Normal behavior, game may freeze briefly
+- **Graphics lag after switching**: Normal behavior, game may freeze briefly while loading new settings
 - **Vaccinator script not working**: Press Backspace to reset on death
 - **Demo recording issues**: Ensure tf/demos folder exists
 - **Class switching problems**: Use Shift+Number method instead of comma key
+- **Network settings not loading**: Ensure all files in `network/` folder are present
+- **Graphics not switching**: Verify `graphics/` folder structure is intact
+- **"Exec: couldn't exec network_combos" error**: Check that network files have correct names (no typos)
 
 ### Reset Commands
 - **Backspace**: Reset Vaccinator state
 - **F8**: Emergency bug fix (may cause temporary lag)
 - **exec allclasses**: Reload core configurations
+- **net_reset**: Reset network settings to defaults
+- **exec quickprecache**: Reload autoexec without restarting TF2
+
+### File Structure Issues
+If configs aren't loading properly, ensure the folder structure matches:
+```
+cfg/
+├── chat/               # Chat & Communication
+│   ├── chat_insults.cfg   # Insults and jokes for keypad
+│   ├── chat_menu.cfg      # Competitive chat binds
+│   └── chat_trash.cfg     # Funny "noob questions" trashtalk
+│
+├── graphics/           # Graphics Presets
+│   ├── graphics.cfg        # Graphics loader (executes presets)
+│   ├── graphics_ultra.cfg  # Ultra/Cinema quality (recording)
+│   ├── graphics_comp.cfg   # Competitive settings
+│   ├── graphics_normal.cfg # Balanced performance
+│   ├── graphics_laptop.cfg # Laptop/low-end systems
+│   └── graphics_maxfps.cfg # Maximum FPS (ultra-low)
+│
+├── network/            # Network Configuration
+│   ├── network.cfg             # Main network loader & base settings
+│   ├── network_66.cfg          # 66 Hz (good connection) profiles
+│   ├── network_40.cfg          # 40 Hz (bad connection) profiles
+│   ├── network_combos.cfg      # Quick combo aliases
+│   └── network_util.cfg        # Utility commands (toggle, check, reset)
+│
+├── utility/            # Utility Scripts & Core
+│   ├── medic/              # Medic-specific utilities
+│   │   ├── medicgun.cfg        # Medigun switcher & uber scripts
+│   │   └── medicvacc.cfg       # Vaccinator resistance switcher
+│   ├── allclasses.cfg      # Core settings for all classes
+│   ├── binds.cfg           # Global keybindings
+│   ├── regen.cfg           # Portable regen for rocket jumping
+│   └── resetall.cfg        # Reset all settings to default
+│
+├── Class Configs (Main Directory)
+│   ├── scout.cfg           # Scout-specific binds & scripts
+│   ├── soldier.cfg         # Soldier market gardener & rocket jump
+│   ├── pyro.cfg            # Pyro airblast & viewmodel toggle
+│   ├── demoman.cfg         # Demoman viewmodel toggle
+│   ├── heavyweapons.cfg    # Heavy sandvich & pootis scripts
+│   ├── engineer.cfg        # Engineer building scripts
+│   ├── medic.cfg           # Medic configuration
+│   ├── sniper.cfg          # Sniper crosshair scripts
+│   └── spy.cfg             # Spy cloak & disguise scripts
+│
+├── autoexec.cfg        # Auto-executed on game startup
+└── quickprecache.cfg   # Quick reload autoexec
+```
 
 ---
 
-## 📝 Credits & Support
-Originally based on community TF2 configs, extensively modified for enhanced gameplay.
+## Credits & Support
+Originally based on community TF2 configs by tvde1, extensively modified for enhanced gameplay.
 
 **Note**: All scripting features are VAC-safe and built into Team Fortress 2's official console system.
