@@ -72,7 +72,7 @@ The graphics system uses modular presets based on Comanglia's FPS configs, optim
 ### Available Presets
 | Config File | DX Level | Purpose | Performance | Shadows | Best For |
 |------------|----------|---------|-------------|---------|----------|
-| `graphics_ultra.cfg` | 98 | Cinema/Recording | Very demanding | High quality | Video making, screenshots |
+| `graphics_ultra.cfg` | 95 | Cinema/Recording | Very demanding | High quality | Video making, screenshots |
 | `graphics_comp.cfg` | 81+ | Competitive | Optimized FPS | Enabled | Competitive play |
 | `graphics_normal.cfg` | 81 | Balanced | Good FPS | Enabled | Casual play, average systems |
 | `graphics_laptop.cfg` | 81 | Low-end | High FPS | Disabled | Laptops, low-end PCs |
