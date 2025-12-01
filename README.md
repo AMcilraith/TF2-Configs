@@ -19,6 +19,7 @@ Heavily modified from Tvde1's configs for personal use.
 - **Null Movement Scripting** - Eliminates conflicting directional inputs
 - **Crouch-Jump Automation** - Rocket jumping and advanced movement
 - **Voice Command System** - Context-sensitive communication
+- **Unified Sound Stack** - Central `sound/` folder with low-latency defaults
 - **Graphics Presets** - Performance-optimized visual settings (Comanglia-based)
 - **Class-Specific Binds** - Specialized controls for each class
 
@@ -61,7 +62,21 @@ These are the typical install directories. If you've installed TF2 somewhere els
 
 ### Performance Optimization
 - **Network Settings**: Optimized rates for competitive play (66 tick)
+- **Network Auto-Reset**: Every class load reapplies the safe default profile
+- **Sound Engine**: Sub-30 ms audio pipeline with tweakable presets
 - **Auto-reload**: Enabled for all weapons
+## Sound Configuration
+
+The new sound system mirrors the modular graphics setup and keeps all audio-related commands in `sound/`.
+
+### Highlights
+- **Lower Latency Mixing**: Global `snd_mixahead 0.03` for quicker hit confirmation
+- **Shared Core File**: `sound/core.cfg` standardizes voice chat, hitsounds, DSP, and ducking
+- **Preset Loader**: `sound/presets.cfg` exposes `sound_low`, `sound_medium`, … `sound_ultra` aliases for instant DSP swaps
+- **Autoexec Integration**: `sound/sound.cfg` is executed before graphics to guarantee consistent audio regardless of preset changes
+
+Use presets from the console (e.g., `sound_high`) whenever you want to toggle quality/performance trade-offs without restarting TF2.
+
 - **Crosshair Config**: Customizable crosshair settings
 - **HUD Optimization**: Enhanced medic caller and target markers
 
@@ -304,6 +319,8 @@ The network configuration system is **modularized** into separate files for bett
 - **Packet Compression**: Enabled
 - **Lag Compensation**: Enabled
 
+Every class script begins with `exec utility/allclasses`, which now issues `net_reset` followed by `net_safe` so experiments with other net profiles never bleed into a new session.
+
 **Network Profiles:**
 - `net_66` / `net_40` - Base 66 Hz / 40 Hz profiles
 - `net_66_harsh` / `net_66_normal` / `net_66_soft` - Different interp levels for 66 Hz
@@ -342,6 +359,11 @@ cfg/
 │   ├── graphics_normal.cfg # Balanced performance
 │   ├── graphics_laptop.cfg # Laptop/low-end systems
 │   └── graphics_maxfps.cfg # Maximum FPS (ultra-low)
+│
+├── sound/              # Sound engine & presets
+│   ├── core.cfg            # Shared low-latency audio defaults
+│   ├── presets.cfg         # Alias-based DSP presets
+│   └── sound.cfg           # Loader, executed by autoexec
 │
 ├── network/            # Network Configuration
 │   ├── network.cfg             # Main network loader & base settings
