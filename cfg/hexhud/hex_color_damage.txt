@@ -1,0 +1,1 @@
+#base ../../custom/hexhud/resource/ui/customizations/colors/damage/damage_red_dark.res 

@@ -1,0 +1,1 @@
+x { CustomCrosshair { font Crosshair_Size_20 } CustomCrosshair_Shadow { font Crosshair_Size_20_Blur } } 

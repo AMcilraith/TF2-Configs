@@ -1,0 +1,1 @@
+#base ../../custom/hexhud/resource/ui/customizations/damage/huddamageaccount_medium_shadow.res 
