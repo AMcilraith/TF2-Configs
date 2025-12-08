@@ -3,6 +3,42 @@ Advanced TF2 configuration scripts with class-specific optimizations, performanc
 
 Heavily modified from Tvde1's configs for personal use.
 
+## Summary of New Features
+
+This configuration pack introduces a variety of advanced features to enhance your Team Fortress 2 gameplay experience. Below is a summary of the key additions:
+
+## 🚀 Core Enhancements
+- **Null Movement Scripting**: Prevents conflicting directional inputs for smoother movement.
+- **Crouch-Jump Automation**: Simplifies rocket jumping and advanced movement techniques.
+- **Shift Modifier System**: Context-sensitive key behaviors for versatile gameplay.
+
+## 🎮 Class-Specific Features
+- **Medic Vaccinator Script**: Automates resistance cycling and includes quick reset functionality.
+- **Engineer Building System**: Fast-build scripts for sentries, dispensers, and teleporters.
+- **Spy Utilities**: Advanced disguise, sapper, and zoom scripts for stealth gameplay.
+- **Heavy Sandvich Management**: Quick throw and eat options for efficient health management.
+
+## 🎨 Graphics Optimization
+- **Competitive Graphics Config**: Maximizes FPS with minimal visual distractions.
+- **Balanced and Ultra Graphics Options**: Tailored for different hardware capabilities.
+- **Customizable Crosshair Settings**: Improved visibility for better targeting.
+
+## 🗣️ Communication Improvements
+- **Numpad Voice Commands**: Quick team callouts for enemy down reports, spy disguises, and tactical commands.
+- **Insults and Jokes System**: Fun and creative chat lines for entertainment.
+
+## 🛠️ Technical Features
+- **Network Optimization**: Competitive-grade settings for smoother online play.
+- **HUD Enhancements**: Improved medic caller and target markers.
+- **Auto-Reload**: Enabled for all weapons to streamline combat.
+
+## 🖥️ Console Commands
+- **Graphics Switching**: Easily toggle between competitive, balanced, and ultra settings.
+- **Training Maps**: Quick access to aim and movement practice maps.
+- **Configuration Management**: Reload core and class-specific scripts on demand.
+
+These features are designed to provide a competitive edge while maintaining a fun and customizable experience. Enjoy the enhanced gameplay!
+
 ## Table of Contents
 - [Features Overview](#features-overview)
 - [Installation](#installation)
@@ -73,42 +109,6 @@ The new sound system mirrors the modular graphics setup and keeps all audio-rela
 - **Lower Latency Mixing**: Global `snd_mixahead 0.03` for quicker hit confirmation
 - **Shared Core File**: `sound/core.cfg` standardizes voice chat, hitsounds, DSP, and ducking
 - **Preset Loader**: `sound/presets.cfg` exposes `sound_low`, `sound_medium`, … `sound_ultra` aliases for instant DSP swaps
-- **Autoexec Integration**: `sound/sound.cfg` is executed before graphics to guarantee consistent audio regardless of preset changes
-
-Use presets from the console (e.g., `sound_high`) whenever you want to toggle quality/performance trade-offs without restarting TF2.
-
-- **Crosshair Config**: Customizable crosshair settings
-- **HUD Optimization**: Enhanced medic caller and target markers
-
-## Graphics Configurations
-
-The graphics system uses modular presets based on Comanglia's FPS configs, optimized for different use cases.
-
-### Available Presets
-| Config File | DX Level | Purpose | Performance | Shadows | Best For |
-|------------|----------|---------|-------------|---------|----------|
-| `graphics_ultra.cfg` | 95 | Cinema/Recording | Very demanding | High quality | Video making, screenshots |
-| `graphics_comp.cfg` | 81+ | Competitive | Optimized FPS | Enabled | Competitive play |
-| `graphics_normal.cfg` | 81 | Balanced | Good FPS | Enabled | Casual play, average systems |
-| `graphics_laptop.cfg` | 81 | Low-end | High FPS | Disabled | Laptops, low-end PCs |
-| `graphics_maxfps.cfg` | 81 | Ultra-low | Maximum FPS | Disabled | Extremely low-end systems |
-
-### Graphics Features
-- **Modular Presets**: Based on Comanglia's FPS configs
-- **Console Switching**: Change graphics on-the-fly with aliases
-- **Competitive Config**: Shadows enabled for competitive advantage, ragdolls/gibs disabled
-- **Ultra Config**: 8x MSAA, 4096 decals, HDR Level 2, 16x anisotropic filtering
-- **Shadow Settings**: Configurable shadow quality and rendering per preset
-- **Spray Control**: Option to disable/limit spray decals per preset
-
-### Console Commands for Graphics
-- `ultra_g` - Switch to ultra/cinema graphics (high-end PCs only)
-- `comp_g` - Switch to competitive graphics (optimized FPS + shadows)
-- `normal_g` - Switch to balanced graphics
-- `laptop_g` - Switch to laptop/low-end mode
-- `maxs_g` - Switch to maximum FPS mode (ultra-low)
-
-**Note:** Graphics configs are located in `graphics/` folder and automatically executed by `graphics.cfg`
 
 ## Class-Specific Scripts
 
