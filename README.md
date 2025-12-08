@@ -109,6 +109,42 @@ The new sound system mirrors the modular graphics setup and keeps all audio-rela
 - **Lower Latency Mixing**: Global `snd_mixahead 0.03` for quicker hit confirmation
 - **Shared Core File**: `sound/core.cfg` standardizes voice chat, hitsounds, DSP, and ducking
 - **Preset Loader**: `sound/presets.cfg` exposes `sound_low`, `sound_medium`, … `sound_ultra` aliases for instant DSP swaps
+- **Autoexec Integration**: `sound/sound.cfg` is executed before graphics to guarantee consistent audio regardless of preset changes
+
+Use presets from the console (e.g., `sound_high`) whenever you want to toggle quality/performance trade-offs without restarting TF2.
+
+- **Crosshair Config**: Customizable crosshair settings
+- **HUD Optimization**: Enhanced medic caller and target markers
+
+## Graphics Configurations
+
+The graphics system uses modular presets based on Comanglia's FPS configs, optimized for different use cases.
+
+### Available Presets
+| Config File | DX Level | Purpose | Performance | Shadows | Best For |
+|------------|----------|---------|-------------|---------|----------|
+| `graphics_ultra.cfg` | 95 | Cinema/Recording | Very demanding | High quality | Video making, screenshots |
+| `graphics_comp.cfg` | 81+ | Competitive | Optimized FPS | Enabled | Competitive play |
+| `graphics_normal.cfg` | 81 | Balanced | Good FPS | Enabled | Casual play, average systems |
+| `graphics_laptop.cfg` | 81 | Low-end | High FPS | Disabled | Laptops, low-end PCs |
+| `graphics_maxfps.cfg` | 81 | Ultra-low | Maximum FPS | Disabled | Extremely low-end systems |
+
+### Graphics Features
+- **Modular Presets**: Based on Comanglia's FPS configs
+- **Console Switching**: Change graphics on-the-fly with aliases
+- **Competitive Config**: Shadows enabled for competitive advantage, ragdolls/gibs disabled
+- **Ultra Config**: 8x MSAA, 4096 decals, HDR Level 2, 16x anisotropic filtering
+- **Shadow Settings**: Configurable shadow quality and rendering per preset
+- **Spray Control**: Option to disable/limit spray decals per preset
+
+### Console Commands for Graphics
+- `ultra_g` - Switch to ultra/cinema graphics (high-end PCs only)
+- `comp_g` - Switch to competitive graphics (optimized FPS + shadows)
+- `normal_g` - Switch to balanced graphics
+- `laptop_g` - Switch to laptop/low-end mode
+- `maxs_g` - Switch to maximum FPS mode (ultra-low)
+
+**Note:** Graphics configs are located in `graphics/` folder and automatically executed by `graphics.cfg`
 
 ## Class-Specific Scripts
 
@@ -147,6 +183,7 @@ The medic configuration includes several specialized scripts:
 - **Q**: Zoom script (toggle low FOV for precision)
 - **Mousewheel Up**: Primary weapon with viewmodel off
 - **Mouse3**: Disguise menu (R to swap teams)
+- **Improved Interpolation**: Optimized `spy_interp` alias for better backstab registration (20ms interp)
 
 ### Scout Utilities
 - **Mouse4**: Sandman ball launcher
