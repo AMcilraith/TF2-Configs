@@ -3,42 +3,6 @@ Advanced TF2 configuration scripts with class-specific optimizations, performanc
 
 Heavily modified from Tvde1's configs for personal use.
 
-## Summary of New Features
-
-This configuration pack introduces a variety of advanced features to enhance your Team Fortress 2 gameplay experience. Below is a summary of the key additions:
-
-## 🚀 Core Enhancements
-- **Null Movement Scripting**: Prevents conflicting directional inputs for smoother movement.
-- **Crouch-Jump Automation**: Simplifies rocket jumping and advanced movement techniques.
-- **Shift Modifier System**: Context-sensitive key behaviors for versatile gameplay.
-
-## 🎮 Class-Specific Features
-- **Medic Vaccinator Script**: Automates resistance cycling and includes quick reset functionality.
-- **Engineer Building System**: Fast-build scripts for sentries, dispensers, and teleporters.
-- **Spy Utilities**: Advanced disguise, sapper, and zoom scripts for stealth gameplay.
-- **Heavy Sandvich Management**: Quick throw and eat options for efficient health management.
-
-## 🎨 Graphics Optimization
-- **Competitive Graphics Config**: Maximizes FPS with minimal visual distractions.
-- **Balanced and Ultra Graphics Options**: Tailored for different hardware capabilities.
-- **Customizable Crosshair Settings**: Improved visibility for better targeting.
-
-## 🗣️ Communication Improvements
-- **Numpad Voice Commands**: Quick team callouts for enemy down reports, spy disguises, and tactical commands.
-- **Insults and Jokes System**: Fun and creative chat lines for entertainment.
-
-## 🛠️ Technical Features
-- **Network Optimization**: Competitive-grade settings for smoother online play.
-- **HUD Enhancements**: Improved medic caller and target markers.
-- **Auto-Reload**: Enabled for all weapons to streamline combat.
-
-## 🖥️ Console Commands
-- **Graphics Switching**: Easily toggle between competitive, balanced, and ultra settings.
-- **Training Maps**: Quick access to aim and movement practice maps.
-- **Configuration Management**: Reload core and class-specific scripts on demand.
-
-These features are designed to provide a competitive edge while maintaining a fun and customizable experience. Enjoy the enhanced gameplay!
-
 ## Table of Contents
 - [Features Overview](#features-overview)
 - [Installation](#installation)
